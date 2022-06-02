@@ -1,0 +1,61 @@
+<div class="container">
+
+  <h5>email === 'admin@email.com' <br> password === 'abc123456'</h5>
+  <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input
+        formControlName="email"
+        type="email"
+        id="form2Example1"
+        class="form-control"
+      />
+      <label class="form-label" for="form2Example1">Email address</label>
+      <p *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched" style="color:tomato;">Email required</p>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input
+        formControlName="password"
+        type="password"
+        id="form2Example2"
+        class="form-control"
+      />
+      <label class="form-label" for="form2Example2">Password</label>
+      <p *ngIf="this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched" style="color:tomato;">Wrong password</p>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="form2Example31"
+            checked
+          />
+          <label class="form-check-label" for="form2Example31">
+            Remember me
+          </label>
+        </div>
+      </div>
+
+      <div class="col">
+        <!-- Simple link -->
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <button [disabled]="loginForm.invalid"  type="submit" class="btn btn-primary btn-block mb-4">
+      Sign in
+    </button>
+
+
+
+  </form>
+</div>

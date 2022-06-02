@@ -1,0 +1,8 @@
+header{
+  background-color: royalblue;
+  height: 100px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-bottom: 10px;
+}

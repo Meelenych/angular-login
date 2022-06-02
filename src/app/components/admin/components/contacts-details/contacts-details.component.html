@@ -1,0 +1,8 @@
+<div>
+  <section *ngIf="user | async as user">
+    <h5>User details</h5>
+    <h3>{{user.name}}</h3>
+    <p>{{user.email}}</p>
+  </section>
+  <button type="button" class="btn-success" [routerLink]="['../']" >Go back</button>
+</div>
